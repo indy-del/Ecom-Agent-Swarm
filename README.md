@@ -1,6 +1,6 @@
 # 🐝 Auto-Fulfillment & Catalog Swarm (Beta)
 
-An autonomous, multi-agent workflow designed to manage high-volume D2C e-commerce operations across decentralized storefronts (Shopify & Ecwid).
+An autonomous, multi-agent workflow designed to manage high-volume D2C e-commerce operations across decentralized storefronts (Shopify & Ecwid). Building a tool for millions of SMEs in India 
 
 ## 📌 The Problem
 Managing our gourmet food brands (Indygood and Swad India) requires constant synchronization. With an active inventory of **1,700 SKUs** and an exact throughput of **1,019 monthly orders**, traditional manual management leads to API rate limits, catalog desyncs, and fulfillment delays. 
