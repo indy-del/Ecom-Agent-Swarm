@@ -1,17 +1,24 @@
-# 🐝 Auto-Fulfillment & Catalog Swarm (Beta)
+# 🐝 Ecom-Agent-Swarm — Autonomous Multi-Agent System for D2C E-commerce
 
-An autonomous, multi-agent workflow designed to manage high-volume D2C e-commerce operations across decentralized storefronts (Shopify & Ecwid). Building a tool for millions of SMEs in India 
+An open-source, autonomous multi-agent workflow designed for high-volume e-commerce operations. Built to handle complex catalog synchronization, intelligent fulfillment routing, and order processing across platforms like Shopify and Ecwid.
 
-## 📌 The Problem
-Managing our gourmet food brands (Indygood and Swad India) requires constant synchronization. With an active inventory of **1,700 SKUs** and an exact throughput of **1,019 monthly orders**, traditional manual management leads to API rate limits, catalog desyncs, and fulfillment delays. 
+**Production Proven:** Currently powering active Indian D2C brands, successfully processing **1,019 active monthly orders** in a complex logistics environment.
 
-## ⚙️ Architecture & Logic Flow
-We built a multi-agent system to replace manual data entry and catalog management.
+## The Problem
+Traditional manual management of decentralized storefronts leads to desyncs, API rate limits, fulfillment delays, and high RTO (Return to Origin) rates. We built a swarm of specialized local AI agents to solve this operational overhead at scale for bootstrapped D2C brands and SMEs.
 
-1. **Ingestion & Triage Agent:** Listens to incoming webhooks from Shopify/Ecwid. It instantly parses JSON payloads to determine if the event is a catalog update or a new fulfillment request.
-2. **Context & Logistics Agent:** Analyzes the fulfillment payload. It strictly filters out any anomalous COD (Cash on Delivery) flags, enforcing our rigid **prepaid-only / 0% RTO (Return to Origin)** logistics pipeline before passing data to the warehouse.
-3. **Reasoning Agent (LLM Core):** For catalog updates, this agent takes raw manufacturer details and dynamically generates localized, SEO-optimized product copy for the specific SKU, standardizing tags across the 1,700-product database.
-4. **Execution Agent:** Pushes the normalized payload back to the respective storefronts and triggers our automated shipping aggregator via API.
+## Architecture
+- **Ingestion & Triage Agent:** Webhook listener managing real-time data streams.
+- **Context & Logistics Agent:** Validates prepaid orders and enforces strict RTO prevention rules.
+- **Reasoning Agent (LLM-powered):** Generates optimized product copy and standardizes catalog metadata.
+- **Execution Agent:** Updates live catalogs and triggers localized shipping protocols.
 
-## 🚀 Why We Need High-Token Throughput
-Currently, this workflow relies heavily on deterministic scripts due to token-cost limitations. Passing hundreds of JSON order payloads and full product contexts through an LLM requires massive token volume. We are actively migrating the `Reasoning Agent` to handle unstructured logistics emails and complex customer support tickets, which will consume an estimated 2M-5M tokens daily.# Ecom-Agent-Swarm
+Built with **Node.js, Python, and robust API integrations**. We are actively migrating heavy reasoning tasks to cloud-delegated AI for enhanced scalability.
+
+## Roadmap & Codex Integration
+This framework is actively maintained. As community adoption grows, we plan to leverage OpenAI Codex to:
+- Build automated issue triage and intelligent PR review bots to maintain strict code quality for community contributions.
+- Scale the Reasoning Agent's capacity to handle unstructured operational data.
+- Generate automated test cases for edge-case webhook handling.
+
+**Open to contributions** — particularly around multi-platform API support, LLM reliability, and testing.
